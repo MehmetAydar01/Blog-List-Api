@@ -23,33 +23,25 @@ const favoriteBlog = (blogs) => {
 const mostBlogs = (blogs) => {
   const mostBlog = _.maxBy(blogs, 'blogs')
 
-  if (!mostBlog) {
-    return {}
-  }
-
-  const result = {
-    author: mostBlog.author,
-    blogs: mostBlog.blogs,
-  }
-
-  return result
+  return !mostBlog
+    ? {}
+    : {
+        author: mostBlog.author,
+        blogs: mostBlog.blogs,
+      }
 }
 
 const mostLikes = (blogs) => {
   const mostLiked = _.maxBy(blogs, 'likes')
 
-  if (!mostLiked) {
-    return {
-      info: 'blog list is empty or likes key is not in the blog list',
-    }
-  }
-
-  const result = {
-    author: mostLiked.author,
-    likes: mostLiked.likes,
-  }
-
-  return result
+  return !mostLiked
+    ? {
+        info: 'blog list is empty or likes key is not in the blog list',
+      }
+    : {
+        author: mostLiked.author,
+        likes: mostLiked.likes,
+      }
 }
 
 module.exports = {
