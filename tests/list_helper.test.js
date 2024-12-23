@@ -140,7 +140,6 @@ describe('favorite blogs', () => {
 
   test('If there is an empty blog list', () => {
     const result = listHelper.favoriteBlog([])
-    console.log('result : ', result)
     assert.deepStrictEqual(result, {})
   })
 
@@ -275,6 +274,14 @@ describe('most blogs', () => {
       blogs: 28,
     })
   })
+
+  test('if the number of most written blogs in the list is the same', () => {
+    const result = listHelper.mostBlogs(blogs)
+    assert.deepStrictEqual(result, {
+      author: 'Michael Chan',
+      blogs: 28,
+    })
+  })
 })
 
 describe('most likes', () => {
@@ -365,6 +372,14 @@ describe('most likes', () => {
   })
 
   test('If there are multiple items in the blog list, find the most liked blog', () => {
+    const result = listHelper.mostLikes(blogs)
+    assert.deepStrictEqual(result, {
+      author: 'Robert C. Martin',
+      likes: 34,
+    })
+  })
+
+  test('if the list has the same number of most liked blogs', () => {
     const result = listHelper.mostLikes(blogs)
     assert.deepStrictEqual(result, {
       author: 'Robert C. Martin',
