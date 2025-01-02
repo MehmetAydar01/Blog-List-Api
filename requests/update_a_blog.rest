@@ -1,0 +1,9 @@
+PUT http://localhost:3003/api/blogs/676f1c2156070174fcaaf74f
+Content-Type: Application/json
+
+{
+  "title": "2024 is here, should I choose Shadcn UI?",
+  "author": "Osama",
+  "url": "https://medium.com/@osamajavaid/2024-is-here-should-i-choose-shadcn-ui-86fe3a179f6c",
+  "likes": 16
+}
