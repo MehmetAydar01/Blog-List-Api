@@ -1,4 +1,6 @@
 const Blog = require('../models/blog')
+const User = require('../models/user')
+const jwt = require('jsonwebtoken')
 
 const initialBlogs = [
   {
@@ -14,6 +16,19 @@ const initialBlogs = [
     likes: 14,
   },
 ]
+
+const generateToken = (user) => {
+  const userForToken = {
+    username: user.username,
+    id: user._id,
+  }
+
+  const token = jwt.sign(userForToken, process.env.SECRET, {
+    expiresIn: 60 * 60,
+  })
+
+  return token
+}
 
 const blogsInDb = async () => {
   const blogs = await Blog.find({})
@@ -31,6 +46,7 @@ const nonExistingId = async () => {
     title: 'sagopa',
     url: 'link',
     likes: 7,
+    user: '6776cb2b212882654ff88795',
   })
   await newBlog.save()
   await newBlog.deleteOne()
@@ -38,9 +54,16 @@ const nonExistingId = async () => {
   return newBlog._id.toString()
 }
 
+const usersInDb = async () => {
+  const users = await User.find({})
+  return users.map((user) => user.toJSON())
+}
+
 module.exports = {
   initialBlogs,
+  generateToken,
   blogsInDb,
   getBlogInDb,
   nonExistingId,
+  usersInDb,
 }

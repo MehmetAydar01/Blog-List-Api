@@ -1,9 +1,10 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-
+# Burası token invalid hatası dönecek artık
 {
-  "title": "2024 is here, should I choose Shadcn UI?",
-  "author": "Osama",
-  "url": "https://medium.com/@osamajavaid/2024-is-here-should-i-choose-shadcn-ui-86fe3a179f6c",
-  "likes": 14
+  "title": "How to Use Redux and Redux Toolkit – Tutorial for Beginners",
+  "author": "Boateng Dickson",
+  "url": "https://www.freecodecamp.org/news/redux-and-redux-toolkit-for-beginners/",
+  "likes": 60,
+  "userId": "6776cb53202882654ff88797"
 }

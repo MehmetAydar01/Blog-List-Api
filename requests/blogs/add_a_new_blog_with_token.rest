@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRlbmVtZSIsImlkIjoiNjc3ZGJiNTI0ZDk2OWFkMzUzODIzZDU1IiwiaWF0IjoxNzM2MjkzMjYxLCJleHAiOjE3MzYyOTMyNzF9.TQsZC8bKovKzc8idcMS5fOIAgogWgtZsdY7woSZjFwQ
+
+{
+  "url": "https://medium.com/@duyguukiranoglu/ab-testi-ve-uygulama-%C3%B6rne%C4%9Fi-52c009f32cec",
+  "title": "Introduction to React Router v6.4 (6.11.1)",
+  "author": "Duygu Kıranoğlu",
+  "likes": 84
+}
