@@ -1,5 +1,3 @@
 ## Fullstackopen
 
----
-
 ## Blog App
