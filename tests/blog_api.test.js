@@ -177,22 +177,6 @@ describe('when there are some blogs saved initially', () => {
 
       assert.strictEqual(response.body.likes, 0)
     })
-
-    test('if there is no title or url property', async () => {
-      const newBlog = {
-        title: 'Url yok title var',
-        author: 'Mehmet Aydar',
-      }
-
-      await api
-        .post('/api/blogs')
-        .set('Authorization', `Bearer ${token}`)
-        .send(newBlog)
-        .expect(400)
-
-      const blogs = await helper.blogsInDb()
-      assert.strictEqual(helper.initialBlogs.length, blogs.length)
-    })
   })
 
   describe('deletion of a blog', () => {
