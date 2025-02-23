@@ -1,3 +1,3 @@
 ## Fullstackopen
 
-## Blog App
+## Blog List API
