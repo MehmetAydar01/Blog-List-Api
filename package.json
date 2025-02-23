@@ -7,7 +7,10 @@
     "start": "cross-env NODE_ENV=production node index.js",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "test": "cross-env NODE_ENV=test node --test",
-    "only-run-blog-api-test": "npm test -- tests/blog_api.test.js"
+    "only-run-blog-api-test": "npm test -- tests/blog_api.test.js",
+    "start:test": "cross-env NODE_ENV=test node index.js",
+    "build:ui": "rm -rf dist && cd ../bloglist-frontend && npm run build && cp -r dist ../bloglist-backend",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "author": "Mehmet Aydar",
   "license": "ISC",
